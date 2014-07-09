@@ -1,0 +1,8 @@
+from django.http import HttpResponse
+import datetime
+from todoapp.models import user,task
+
+
+def home(request):
+    return HttpResponse("Home Page")
+
