@@ -33,7 +33,8 @@ def get_public_tasks(request):
 	t=task.objects.all()
 	return render(request,"public.html",{"tasks":t})
 
-def get_private_tasks(request):
-	t=task.objects.all()
-	return render(request,"private.html",{"tasks":t})
-
+def get_private_tasks(request,user_id):
+    task_user = task.objects.filter(user_name_id=user_id)
+    task_visibility = task.objects.filter(task_visibility=1)               
+    return render(request, "private.html", {"task_user": task_user,
+                                              "task_visibility":task_visibility})

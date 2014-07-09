@@ -5,12 +5,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+<table border=1 width=50%>
+<tr><td>Task Name</td><td>Task Description</td>
+</tr>	
 {% for task in tasks %}
 	{%if task.task_visibility == 0%}
-    	{{ task.task_name }}
-    	{{ task.task_description }}
-    {%endif %}	
+    <tr><td>{{ task.task_name }} </td>
+    	<td>{{ task.task_description }}</td>
+    </tr>
+    {%endif %}
  <br/>
 {% endfor %} 
 </body>
