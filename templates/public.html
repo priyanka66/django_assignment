@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+{% for task in tasks %}
+	{%if task.task_visibility == 0%}
+    	{{ task.task_name }}
+    	{{ task.task_description }}
+    {%endif %}	
+ <br/>
+{% endfor %} 
+</body>
+</html>

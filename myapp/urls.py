@@ -10,6 +10,9 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'todoapp.views.home', name='home'),
+    url(r'^alltasks/','todoapp.views.get_tasks',name='get_tasks'),
+    url(r'^public/','todoapp.views.get_public_tasks',name='public_tasks'),
+    url(r'^private/','todoapp.views.get_private_tasks',name='private_tasks')
 )
 
 
