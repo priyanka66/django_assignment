@@ -8,5 +8,5 @@ class test_get_task(TestCase):
 		task.objects.create(task_name="Task test",user_name = self.user)
 
 	def test_check_if_saved(self):
-        task = task.objects.get(user_name = self.user)
-        self.assertEqual(task, 1, 'the task was not saved')
+		tasks = task.objects.filter(user_name = self.user)
+		self.assertEqual(len(tasks), 1, 'the task was not saved')
